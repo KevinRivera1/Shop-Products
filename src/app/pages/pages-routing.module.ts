@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { PagesComponent } from "./pages.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
-import { ProductComponent } from "./product";
+import { ProductComponent, ProductModule } from "./product";
 
 const routes: Routes = [
   { path: "", redirectTo: "pages", pathMatch: "full" },
@@ -30,7 +30,7 @@ const routes: Routes = [
 ];
 @NgModule({
   declarations: [],
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes), ProductModule],
   exports: [RouterModule],
 })
 export class PagesRoutingModule {}
