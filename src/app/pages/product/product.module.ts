@@ -1,21 +1,26 @@
 import { NgModule } from "@angular/core";
+import { ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 import { FormProductComponent } from "./formProduct/formProduct.component";
-import { ProductComponent } from "./product.component";
 import { ListProductComponent } from "./listProduct/listProduct.component";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ProductComponent } from ".";
+import { ProductsService } from "src/app";
+import { CommonModule } from "@angular/common";
 
 const routes: Routes = [
-  { path: "", redirectTo: "pt", pathMatch: "full" },
-  { path: "pt", component: ProductComponent },
-  { path: "form", component: FormProductComponent },
-  { path: "lt", component: ListProductComponent },
-  { path: "**", redirectTo: "pt", pathMatch: "full" },
+  {
+    path: "",
+    component: ProductComponent,
+    children: [
+      { path: "form", component: FormProductComponent },
+      { path: "list", component: ListProductComponent },
+    ],
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), ReactiveFormsModule],
-  declarations: [],
-  exports: [RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule.forChild(routes)],
+  declarations: [FormProductComponent, ListProductComponent],
+  exports: [RouterModule, FormProductComponent, ListProductComponent],
 })
 export class ProductModule {}
