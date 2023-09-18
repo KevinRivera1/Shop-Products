@@ -1,3 +1,29 @@
-<p>
-  listProduct works!
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productos">
+      <th scope="row">{{product.id}}</th>
+      <td>{{product.title}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.category.name}}</td>
+      <td>
+        <img src="{{product.images}}" class="w-50" alt="">
+      </td>
+      <td class="d-flex flex-column" style="gap:10px;">
+        <button class="btn btn-warning" [routerLink]="['../form']" (click)="editProduct(product)"><i
+            class="bi bi-pencil-square"></i></button>
+        <button class="btn btn-danger" (click)="deleteProduct(product.id)"><i class="bi bi-trash3"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
