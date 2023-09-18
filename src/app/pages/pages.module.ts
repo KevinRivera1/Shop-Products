@@ -9,20 +9,25 @@ import { ProductComponent } from "./product";
 import { ProductModule } from "./product/product.module";
 import { ReactiveFormsModule } from "@angular/forms";
 
-
 @NgModule({
   declarations: [
     CatalogueComponent,
     HomeComponent,
     ProductComponent,
-    PagesComponent
+    PagesComponent,
   ],
   exports: [
     CatalogueComponent,
     HomeComponent,
     ProductComponent,
-    PagesComponent
+    PagesComponent,
   ],
-  imports: [CommonModule, RouterModule, ProductModule, SharedModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    ProductModule,
+    SharedModule,
+    ReactiveFormsModule,
+  ],
 })
 export class PagesModule {}
