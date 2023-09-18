@@ -7,6 +7,8 @@ export interface ProductModel {
   description: string;
   images: string[];
   category: CategoryModel;
+  creationAt?: Date;
+  updatedAt?: Date;
 }
 
 export interface CreateProductDto
@@ -16,4 +18,6 @@ export interface CreateProductDto
 
 export interface UpdateProductDto extends Partial<ProductModel> {
   categoryId?: number;
+  creationAt?: Date;
+  updatedAt?: Date;
 }
