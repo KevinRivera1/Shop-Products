@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { PagesComponent } from "./pages.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ProductComponent, ProductModule } from "./product";
+import { HomeComponent } from "./home/home.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "pages", pathMatch: "full" },
@@ -24,6 +25,10 @@ const routes: Routes = [
         loadChildren: () =>
           import("./product/product.module").then((m) => m.ProductModule),
       },
+      {
+        path:"home",
+        component: HomeComponent,
+      }
     ],
   },
   { path: "**", redirectTo: "pages", pathMatch: "full" },
