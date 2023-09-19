@@ -6,77 +6,22 @@
     </div>
 
     <div class="row ">
-      <div class="col-md-6 col-lg-4 col-sm-12 mb-4">
+
+      <div class="col-md-6 col-lg-4 col-sm-12 mb-4" *ngFor="let producto of productos">
         <div class="card h-100" style="width: 19rem;">
-          <img src="../assets/angular-logo.png" class="card-img-top imagen" alt="...">
-          <div class="card-body text-center">
-
-
-
-
-            <a href="" id="btn-carts" class="btn">Mas Info</a>
+          <img src="{{producto.images}}" class="card-img-top imagen" alt="Product Image">
+          <div class="card-body">
+            <h5 class="card-title">{{ producto.title }}</h5>
+            <p class="card-text">{{producto.description}}</p>
           </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Price: {{producto.price}}$</li>
+            <li class="list-group-item">Category: {{producto.category.name}}</li>
+          </ul>
+          <a href="#" id="btn-carts" class="btn">Mas Info</a>
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-4 col-sm-12  mb-4">
-        <div class="card h-100" style="width: 18rem;">
-          <img src="../assets/angular-logo.png" class="card-img-top imagen" alt="...">
-          <div class="card-body text-center">
-
-
-
-            <a href="" id="btn-carts" class="btn">Mas Info</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 col-sm-12  mb-4 ">
-        <div class="card h-100" style="width: 18rem;">
-          <img src="../assets/angular-logo.png" class="card-img-top imagen" alt="...">
-          <div class="card-body text-center">
-
-
-
-            <a href="" id="btn-carts" class="btn ">Mas Info</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 col-sm-12  mb-4">
-        <div class="card h-100" style="width: 18rem;">
-          <img src="../assets/angular-logo.png" class="card-img-top imagen" alt="...">
-          <div class="card-body text-center">
-
-            <a href="" id="btn-carts" class="btn">Mas Info</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 col-sm-12  mb-4">
-        <div class="card h-100" style="width: 18rem;">
-          <img src="../assets/angular-logo.png" class="card-img-top imagen" alt="...">
-          <div class="card-body text-center">
-
-
-
-            <a href="" id="btn-carts" class="btn">Mas Info</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 col-sm-12  mb-4">
-        <div class="card h-100" style="width: 18rem;">
-          <img src="../assets/angular-logo.png" class="card-img-top imagen" alt="...">
-          <div class="card-body text-center">
-
-
-
-
-            <a href="" id="btn-carts" class="btn">Mas Info</a>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
