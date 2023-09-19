@@ -5,6 +5,8 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ProductComponent, ProductModule } from "./product";
 import { HomeComponent } from "./home/home.component";
 
+
+
 const routes: Routes = [
   { path: "", redirectTo: "pages", pathMatch: "full" },
   {
@@ -23,11 +25,12 @@ const routes: Routes = [
       {
         path: "product",
         loadChildren: () =>
-          import("./product/product.module").then((m) => m.ProductModule),
+          import("./product/product.module").then((m) => m.ProductModule)
       },
       {
         path:"home",
         component: HomeComponent,
+        data: { breadcrumb: 'home'}
       }
     ],
   },
