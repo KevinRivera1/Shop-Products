@@ -12,7 +12,7 @@ const routes: Routes = [
     path: "",
     component: ProductComponent,
     children: [
-      { path: "form", component: FormProductComponent },
+      { path: "form", component: FormProductComponent, data: { breadcrumb: 'form' } },
       { path: "list", component: ListProductComponent },
     ],
   },
